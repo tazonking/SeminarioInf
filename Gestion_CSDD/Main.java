@@ -8,23 +8,23 @@ public class Main {
         Club club = new Club("Club Social y Deportivo Dolavon", "Av. Principal 123", new Date(), 1000000.0);
 
         while (true) {
-            System.out.println("\n----- Menú Principal -----");
+            System.out.println("\n----- MenÃº Principal -----");
             System.out.println("1. Gestionar Socios");
-            System.out.println("2. Gestionar Administradores");
+            //System.out.println("2. Gestionar Administradores");
             System.out.println("3. Comprar Club");
             System.out.println("4. Vender Club");
             System.out.println("6. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opciÃ³n: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Consumir nueva línea
+            scanner.nextLine();  // Consumir nueva lÃ­nea
 
             switch (opcion) {
                 case 1:
                     gestionar_Socios(club, scanner);
                     break;
-                case 2:
+                /*case 2:
                     gestionar_Administradores(club, scanner);
-                    break;
+                    break;*/
                 case 4:
                     System.out.print("Ingrese el monto para comprar el club: ");
                     double compra_Monto = scanner.nextDouble();
@@ -41,7 +41,7 @@ public class Main {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Opción no válida.");
+                    System.out.println("OpciÃ³n no vÃ¡lida.");
                     break;
             }
         }
@@ -49,30 +49,30 @@ public class Main {
 
     public static void gestionar_Socios(Club club, Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Menú Socios ---");
+            System.out.println("\n--- MenÃº Socios ---");
             System.out.println("1. Agregar Socio");
             System.out.println("2. Modificar Datos de un Socio");            
             System.out.println("3. Consultar por Socio");
             System.out.println("4. Eliminar Socio");
             System.out.println("5. Pagar Cuota");
-            System.out.println("6. Volver al Menú Principal");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("6. Volver al MenÃº Principal");
+            System.out.print("Seleccione una opciÃ³n: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Consumir nueva línea
+            scanner.nextLine();  // Consumir nueva lÃ­nea
 
             switch (opcion) {
                 case 1:
                     System.out.print("Ingrese ID del Socio: ");
                     String id_socstr = scanner.nextLine();
                     int Id_socio = Integer.parseInt(id_socstr); 
-                    scanner.nextLine(); // Consumir nueva línea
+                    scanner.nextLine(); // Consumir nueva lÃ­nea
                     System.out.print("Ingrese Nombre del Socio: ");
                     String nombre = scanner.nextLine();
                     System.out.print("Ingrese Apellido del Socio: ");
                     String apellido = scanner.nextLine();
-                    System.out.print("Ingrese Dirección del Socio: ");
+                    System.out.print("Ingrese DirecciÃ³n del Socio: ");
                     String direccion = scanner.nextLine();
-                    System.out.print("Ingrese Teléfono del Socio: ");
+                    System.out.print("Ingrese TelÃ©fono del Socio: ");
                     String telefono = scanner.nextLine();
                     System.out.print("Ingrese Email del Socio: ");
                     String email = scanner.nextLine();
@@ -88,9 +88,9 @@ public class Main {
                      String nuevo_nombre = scanner.nextLine();
                      System.out.print("Ingrese Apellido del Socio: ");
                      String nuevo_apellido = scanner.nextLine();
-                     System.out.print("Ingrese Dirección del Socio: ");
+                     System.out.print("Ingrese DirecciÃ³n del Socio: ");
                      String nueva_direccion = scanner.nextLine();
-                     System.out.print("Ingrese Teléfono del Socio: ");
+                     System.out.print("Ingrese TelÃ©fono del Socio: ");
                      String nueva_telefono = scanner.nextLine();
                      System.out.print("Ingrese Email del Socio: ");
                      String nuevo_email = scanner.nextLine();
@@ -107,8 +107,8 @@ public class Main {
                         System.out.println("ID: " + socio_Consultado.getId_Socio());
                         System.out.println("Nombre: " + socio_Consultado.getNombre());
                         System.out.println("Apellido: " + socio_Consultado.getApellido());
-                        System.out.println("Dirección: " + socio_Consultado.getDireccion());
-                        System.out.println("Teléfono: " + socio_Consultado.getTelefono());
+                        System.out.println("DirecciÃ³n: " + socio_Consultado.getDireccion());
+                        System.out.println("TelÃ©fono: " + socio_Consultado.getTelefono());
                         System.out.println("Email: " + socio_Consultado.getEmail());
                         System.out.println("Cuota Pagada: " + socio_Consultado.isCuotaPagada());
                         System.out.println("Tipo de Socio: " + socio_Consultado.getTipo_Socio());
@@ -142,23 +142,23 @@ public class Main {
                 case 6:                	
                     return;
                 default:
-                    System.out.println("Opción no válida.");
+                    System.out.println("OpciÃ³n no vÃ¡lida.");
                     break;
             }
         }
     }
 
    
-    public static void gestionar_Administradores(Club club, Scanner scanner) {
+    /*public static void gestionar_Administradores(Club club, Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Menú Administradores ---");
+            System.out.println("\n--- MenÃº Administradores ---");
             System.out.println("1. Crear Usuario");
             System.out.println("2. Asignar Permisos");
             System.out.println("3. Modificar rol del Usuario");
             System.out.println("4. Eliminar Usuario");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opciÃ³n: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Consumir nueva línea
+            scanner.nextLine();  // Consumir nueva lÃ­nea
 
             switch (opcion) {
                 case 1:
@@ -169,19 +169,19 @@ public class Main {
                     String nombre = scanner.nextLine();
                     System.out.print("Ingrese Apellido del Usuario: ");
                     String apellido = scanner.nextLine();
-                    System.out.print("Ingrese Dirección del Usuario: ");
+                    System.out.print("Ingrese DirecciÃ³n del Usuario: ");
                     String direccion = scanner.nextLine();
-                    System.out.print("Ingrese Teléfono del Usuario: ");
+                    System.out.print("Ingrese TelÃ©fono del Usuario: ");
                     String telefono = scanner.nextLine();
                     System.out.print("Ingrese Email del Usuario: ");
                     String email = scanner.nextLine();
-                    System.out.print("Ingrese Contraseña del Usuario: ");
-                    String contraseña = scanner.nextLine();
+                    System.out.print("Ingrese ContraseÃ±a del Usuario: ");
+                    String contraseÃ±a = scanner.nextLine();
                     System.out.print("indicar si es Usuario o Administrador: ");
                     String tipo_us = scanner.nextLine();                    
-                    Administrador nuevoAdmin = new Administrador(Id_Admin, nombre, apellido, direccion, telefono, email, contraseña, tipo_us);                    
+                    Administrador nuevoAdmin = new Administrador(Id_Admin, nombre, apellido, direccion, telefono, email, contraseÃ±a, tipo_us);                    
                     break;
-                /*case 2:
+                case 2:
                 	System.out.print("Ingrese el ID del Usuario a modificar el Rol: ");                	
                     String id_User = scanner.nextLine();
                     int admin_id = Integer.parseInt(id_User);    
@@ -208,11 +208,11 @@ public class Main {
                 case 5:
                     return;
                 default:
-                    System.out.println("Opción no válida.");
-                    break;*/
+                    System.out.println("OpciÃ³n no vÃ¡lida.");
+                    break;
             }
         }
-    }
+    }*/
 }
 
 
