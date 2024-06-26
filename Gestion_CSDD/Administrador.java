@@ -12,12 +12,22 @@ public class Administrador extends Usuario {
         
     }
     
-    public Usuario crear_Usuario(int id_Usuario, String nombre, String apellido, Date fecha_nac, String direccion, String telefono, String email, String contraseña, String rol) {
+    public Usuario crear_Usuario(int id_Usuario, String nombre, String apellido, String direccion, String telefono, String email, String contraseña, String rol) {
         Usuario nuevo_Usuario = new Usuario(id_Usuario, nombre, apellido, direccion, telefono, email, contraseña, rol);
         lista_Usuarios.add(nuevo_Usuario);
         return nuevo_Usuario;
     }
-        
+    
+    public Usuario buscar_AdministradorxId(int id_admin) {
+        for (Usuario usuario : lista_Usuarios) {
+            if (usuario.getId_Usuario() == id_admin) {
+                return usuario; // Retorna el administrador encontrado
+            }
+        }    
+        return null; // Retorna null si no se encuentra ningún administrador con ese ID
+    }
+    
+           
     public boolean asignar_Permisos(int id_usuario, String nuevo_Rol) {
          for (Usuario usuario : lista_Usuarios) {
              if (usuario.getId_Usuario() == id_usuario) {
@@ -47,6 +57,10 @@ public class Administrador extends Usuario {
             }
         }
         return false; // Retorna false si el usuario con el id especificado no se encontró
+    }
+    
+    public List<Usuario> getLista_Usuarios() {
+        return lista_Usuarios;
     }
 }
 

@@ -1,38 +1,21 @@
 package Gestion_CSDD;
 
-import java.util.*;
+import java.util.Date;
 
 public class Club {
     private String nombre;
     private String direccion;
-    private Date fundacion;
-    private int cant_socios;
-    private double valor_Club;
+    private Date fecha_Fundacion;
+    private double capital;
 
-    
-    public Club(String nombre, String direccion, Date fundacion, double valor_Club) {
+    public Club(String nombre, String direccion, Date fecha_Fundacion, double capital) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.fundacion = fundacion;
-        this.valor_Club = valor_Club;
+        this.fecha_Fundacion = fecha_Fundacion;
+        this.capital = capital;
     }
 
-    // Métodos para gestionar el club
-    public void comprarClub(double monto) {
-        this.valor_Club += monto;
-        System.out.println("Club comprado por: " + monto);
-    }
-
-    public void venderClub(double monto) {
-        if (this.valor_Club >= monto) {
-            this.valor_Club -= monto;
-            System.out.println("Club vendido por: " + monto);
-        } else {
-            System.out.println("Monto de venta excede el valor del club.");
-        }
-    }
-    
-    // GETTER Y SETTER
+    // Getters y Setters
     
     public String getNombre() {
         return nombre;
@@ -50,27 +33,34 @@ public class Club {
         this.direccion = direccion;
     }
 
-    public Date getFundacion() {
-        return fundacion;
+    public Date getFechaFundacion() {
+        return fecha_Fundacion;
     }
 
-    public void setFundacion(Date fundacion) {
-        this.fundacion = fundacion;
+    public void setFechaFundacion(Date fechaFundacion) {
+        this.fecha_Fundacion = fechaFundacion;
     }
 
-    public int getCant_socios() {
-        return cant_socios;
+    public double getCapital() {
+        return capital;
     }
 
-    public void setCant_socios(int cant_socios) {
-        this.cant_socios = cant_socios;
+    public void setCapital(double capital) {
+        this.capital = capital;
     }
 
-    public double getValor_Club() {
-        return valor_Club;
+    // Métodos adicionales específicos del club, como comprar y vender el club, etc.
+    public void comprar_Club(double monto) {
+        this.capital += monto;
+        System.out.println("Club comprado por un monto de: " + monto);
     }
 
-    public void setValor_Club(double valor_Club) {
-        this.valor_Club = valor_Club;
+    public void vender_Club(double monto) {
+        if (monto <= this.capital) {
+            this.capital -= monto;
+            System.out.println("Club vendido por un monto de: " + monto);
+        } else {
+            System.out.println("No se puede vender el club por falta de fondos suficientes.");
+        }
     }
 }

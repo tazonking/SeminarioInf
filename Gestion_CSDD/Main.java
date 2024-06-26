@@ -10,7 +10,7 @@ public class Main {
         while (true) {
             System.out.println("\n----- Menú Principal -----");
             System.out.println("1. Gestionar Socios");
-            System.out.println("2. Gestionar Administradores");
+            //System.out.println("2. Gestionar Administradores");
             System.out.println("3. Comprar Club");
             System.out.println("4. Vender Club");
             System.out.println("6. Salir");
@@ -22,18 +22,18 @@ public class Main {
                 case 1:
                     gestionar_Socios(club, scanner);
                     break;
-                case 2:
+                /*case 2:
                     gestionar_Administradores(club, scanner);
-                    break;
+                    break;*/
                 case 4:
                     System.out.print("Ingrese el monto para comprar el club: ");
                     double compra_Monto = scanner.nextDouble();
-                    club.comprarClub(compra_Monto);
+                    club.comprar_Club(compra_Monto);
                     break;
                 case 5:
                     System.out.print("Ingrese el monto para vender el club: ");
                     double venta_Monto = scanner.nextDouble();
-                    club.venderClub(venta_Monto);
+                    club.vender_Club(venta_Monto);
                     break;
                 case 6:
                     System.out.println("Saliendo del sistema...");
@@ -147,9 +147,12 @@ public class Main {
             }
         }
     }
+}
 
    
-    public static void gestionar_Administradores(Club club, Scanner scanner) {
+    /*public static void gestionar_Administradores(Club club, Scanner scanner) {
+    	
+    	
         while (true) {
             System.out.println("\n--- Menú Administradores ---");
             System.out.println("1. Crear Usuario");
@@ -180,20 +183,28 @@ public class Main {
                     System.out.print("indicar si es Usuario o Administrador: ");
                     String tipo_us = scanner.nextLine();                    
                     Administrador nuevoAdmin = new Administrador(Id_Admin, nombre, apellido, direccion, telefono, email, contraseña, tipo_us);                    
+                    nuevoAdmin.crear_Usuario(Id_Admin, nombre, apellido, direccion, telefono, email, contraseña, tipo_us);
                     break;
-                /*case 2:
-                	System.out.print("Ingrese el ID del Usuario a modificar el Rol: ");                	
-                    String id_User = scanner.nextLine();
-                    int admin_id = Integer.parseInt(id_User);    
-                    System.out.print("Ingrese Nuevo Rol del Usuario: ");
-                    String nuevoRol = scanner.nextLine();
-                    if (nuevoAdmin.modificar_Rol(admin_id, nuevoRol)) {
-                    System.out.println("Rol del usuario modificado exitosamente.");
-                    } else {
-                        System.out.println("Usuario no encontrado.");
-                    }
-                    break;
-                case 3:             
+                case 2:
+                	 if (nuevoAdmin.getLista_Usuarios().isEmpty()) {
+                         System.out.println("No hay usuarios creados para asignar permisos.");
+                         break;
+                     }
+
+                     System.out.print("Ingrese el ID del Usuario a modificar el Rol: ");
+                     int admin_id = scanner.nextInt();
+                     scanner.nextLine();  // Consumir nueva línea
+                     System.out.print("Ingrese Nuevo Rol del Usuario: ");
+                     String nuevoRol = scanner.nextLine();
+                     
+                     if (nuevoAdmin.asignar_Permisos(admin_id, nuevoRol)) {
+                         System.out.println("Rol del usuario modificado exitosamente.");
+                     } else {
+                         System.out.println("Usuario no encontrado.");
+                     }
+                     break;
+                case 3:
+                	
                 	
                 case 4:
                 	System.out.print("Ingrese ID del Administrador a eliminar: ");
@@ -209,10 +220,10 @@ public class Main {
                     return;
                 default:
                     System.out.println("Opción no válida.");
-                    break;*/
+                    break;
             }
         }
     }
-}
+}*/
 
 
